@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .w3-tag,
+    .fa {
+        cursor: pointer
+    }
+
+    .w3-tag {
+        height: 15px;
+        width: 15px;
+        padding: 0;
+        margin-top: 6px
+    }
+
+    .msg-error {
+        color: red;
+        display: none;
+    }
+</style>
+
+<body>
+
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+            <div class="w3-col s3">
+                <a href="#" class="w3-button w3-block">Inicio</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#about" class="w3-button w3-block">Sobre</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#contact" class="w3-button w3-block">Contato</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+        <!-- Grid -->
+        <div class="w3-row w3-container">
+            <div class="w3-center w3-padding-64">
+                <h1 class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Análise e desenvolvimento de
+                    Sistemas</h1>
+            </div>
+            <!-- w3-col m6 w3-light-grey w3-container w3-padding-16 -->
+            <div class="w3-row w3-center">
+                <p class="w3-row">
+                    O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver,
+                    analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de
+                    atividades.
+                </p class="w3-row">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qBipTEqBSEM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="w3-row w3-container">
+            <div class="w3-center w3-padding-64">
+                <h1 class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Sobre</h1>
+            </div>
+            <!-- w3-col m6 w3-light-grey w3-container w3-padding-16 -->
+            <div class="w3-row w3-center">
+                <p class="w3-row">
+                    Esse site vai servir como avalição da disciplina de Programação para WEB I no curso de Análise e
+                    desenvolvimento de sistemas do IFPI Pedro II
+                </p class="w3-row">
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="w3-center w3-padding-64" id="contact">
+            <h1 class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</h1>
+        </div>
+
+        <form class="w3-container" action="#" id="form">
+            <div class="w3-section">
+                <label>Nota para o site</label>
+                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nota"
+                    id="nota" placeholder="Informe um número entre 0 e 100" required>
+                <span class="msg-error">O valor é inválido tente novamente</span>
+            </div>
+            <button type="submit" class="w3-button w3-block w3-black">Avaliar</button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+        <p>Desenvolvido por Victor Castro</p>
+    </footer>
+
+
+    <script>
+        const form = document.querySelector("#form");
+
+        form.addEventListener("submit", (el) => {
+            el.preventDefault();
+            const nota = document.querySelector("#nota").value;
+            const mensagemErro = document.querySelector(".msg-error");
+            mensagemErro.style.display = "none";
+
+            if (nota >= 0 && nota <= 100) {
+                mensagemErro.style.display = "none";
+            } else {
+                mensagemErro.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
